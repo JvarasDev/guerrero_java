@@ -62,6 +62,10 @@ public class Guerrero {
         this.espada = e;
        
     }
+    public void equipar_escudo(Escudo e){
+        this.escudo = e;
+       
+    }
     
   public int getPuntosAtaqueTotales() {  
       if (espada == null) {
@@ -71,16 +75,15 @@ public class Guerrero {
     }
 }
   public int puntos_vida_totales(){
-      
-      
-  }
-  
-  public int puntos_totales_defensa(){
-      
+      return puntos_vida + escudo.getPuntos_defensa();
       
   }
   
-  
+  public void mostrar_estado(){
+      
+    
+}
+    
 }
     
 
