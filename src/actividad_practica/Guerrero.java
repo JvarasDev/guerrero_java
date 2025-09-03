@@ -74,16 +74,37 @@ public class Guerrero {
         return puntos_ataque + espada.getPuntos_ataque();  // Base + ataque de espada
     }
 }
-  public int puntos_vida_totales(){
-      return puntos_vida + escudo.getPuntos_defensa();
-      
-  }
-  
-  public void mostrar_estado(){
-      
-    
+  public int getPuntosVidaTotales(){  // Nombre correcto según especificación
+    if (escudo == null) {
+        return puntos_vida;
+    } else {
+        return puntos_vida + escudo.getPuntos_defensa();
+    }
 }
+public void mostrarEstado(){  // Nombre correcto
+    System.out.println("Nombre: " + nombre);
+    System.out.println("Puntos de vida totales: " + getPuntosVidaTotales());
+    System.out.println("Puntos de ataque totales: " + getPuntosAtaqueTotales());
     
+    // Mostrar equipamiento
+    if (espada == null) {
+        System.out.println("Espada: Sin equipar");
+    } else {
+        System.out.println("Espada: " + espada.getNombre());
+    }
+    
+    if (escudo == null) {
+        System.out.println("Escudo: Sin equipar");
+    } else {
+        System.out.println("Escudo: " + escudo.getNombre());
+    }
+}
+  
+
+
+  
+  
+  
 }
     
 
